@@ -11,6 +11,7 @@
 
     <properties>
     	<jetty.version>9.4.11.v20180605</jetty.version>
+    	<main-class>com.github.sebmartel.JettyStarter.start.Start</main-class>
     </properties>
 	
 	<dependencies>
@@ -41,8 +42,16 @@
 				<version>1.0.BETA</version>
 				<extensions>true</extensions>
 				<configuration>
-                     <mainClass>com.github.sebmartel.JettyStarter.start.Start</mainClass>
+                     <mainClass>${main-class}</mainClass>
                 </configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.6.0</version>
+				<configuration>
+					<mainClass>${main-class}</mainClass>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
